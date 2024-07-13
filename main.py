@@ -20,12 +20,8 @@ import sqlite3
 # logger_file_handler.setFormatter(formatter)
 # logger.addHandler(logger_file_handler)
 
-try:
-    API = os.environ["COINPANIC_API"]
-except KeyError:
-    SOME_SECRET = "Token not available!"
 
-
+API = os.environ["COINPANIC_API"]
 if __name__ == "__main__":
     conn = sqlite3.connect('crypto_data.db')
     query = "SELECT * FROM crypto_news_sentiment"

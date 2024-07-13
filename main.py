@@ -21,8 +21,9 @@ import sqlite3
 # logger.addHandler(logger_file_handler)
 
 
-API = os.environ["COINPANIC_API"]
+
 if __name__ == "__main__":
+    API = os.environ["COINPANIC_API"]
     conn = sqlite3.connect('crypto_data.db')
     query = "SELECT * FROM crypto_news_sentiment"
     query_df = pd.read_sql_query(query, conn)

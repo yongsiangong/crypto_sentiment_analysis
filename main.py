@@ -17,11 +17,9 @@ logger_file_handler.setFormatter(formatter)
 logger.addHandler(logger_file_handler)
 
 try:
-    SOME_SECRET = os.environ["SOME_SECRET"]
+    API = os.environ["COINPANIC_API"]
 except KeyError:
     SOME_SECRET = "Token not available!"
-    #logger.info("Token not available!")
-    #raise
 
 
 if __name__ == "__main__":

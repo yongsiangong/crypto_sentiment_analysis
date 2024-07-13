@@ -1,7 +1,7 @@
 # import logging
 # import logging.handlers
-# import os
 
+import os
 import requests
 import pandas as pd
 import time

@@ -27,7 +27,7 @@ except KeyError:
 
 
 if __name__ == "__main__":
-    conn = sqlite3.connect('streamlit/coinpanic/crypto_data.db')
+    conn = sqlite3.connect('crypto_data.db')
     query = "SELECT * FROM crypto_news_sentiment"
     query_df = pd.read_sql_query(query, conn)
     conn.close()
@@ -68,6 +68,6 @@ if __name__ == "__main__":
     new_df = new_df.reset_index()
     new_df = new_df[~new_df['id'].isin(existing_ids)]
 
-    conn = sqlite3.connect('streamlit/coinpanic/crypto_data.db')
+    conn = sqlite3.connect('crypto_data.db')
     new_df.to_sql('crypto_news_sentiment', conn, if_exists = 'append', index = False)
     conn.close()

@@ -26,7 +26,7 @@ st.write(f"- Latest article available (UTC -8): {query_df['published_at'].max()}
 st.subheader("Select Date Range")
 col1, col2 = st.columns(2)
 with col1:
-    start_date = st.date_input("Select a start date", min_value = query_df['published_at'].min(), max_value = query_df['published_at'].max(), value= query_df['published_at'].min())
+    start_date = st.date_input("Select a start date", min_value = query_df['published_at'].min(), max_value = query_df['published_at'].max(), value= query_df['published_at'].max())
 with col2:
     end_date = st.date_input("Select a end date", min_value = start_date, max_value = query_df['published_at'].max(), value= query_df['published_at'].max())
 
